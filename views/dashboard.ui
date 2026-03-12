@@ -1,0 +1,486 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow</class>
+ <widget class="QMainWindow" name="MainWindow">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1000</width>
+    <height>689</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">
+QMainWindow, QWidget#centralwidget {
+    background-color: #F8FBFB;
+}
+
+QFrame#frame_menu{
+    background-color:#dff2ec;
+	border-radius: 20px;
+}
+
+QLineEdit#barraBusqueda {
+    background-color: #FFFFFF;
+    border: 1px solid #E1EBE8;
+    border-radius: 20px;
+    padding: 10px 20px;
+    font-size: 14px;
+    color: #4A5551;
+}
+
+QFrame#frame_cabecera {
+    background: #00A36C;
+    border-radius: 25px;
+}
+
+QLabel#lbl_saludo {
+    color: white;
+    font-size: 28px;
+    font-weight: bold;
+    background: transparent;
+}
+
+QLabel#lbl_fecha {
+    color: #E1F2ED;
+    font-size: 14px;
+    background: transparent;
+}
+
+QLabel#lbl_titulo, QLabel#lbl_titulo2, QLabel#lbl_titulo3 {
+    color: #333333;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+QLabel#lbl_informacion, QLabel#lbl_informacion2, QLabel#lbl_informacion3 {
+    color: #333333;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+QLabel#label {
+    color: #9BB1AA;
+    font-size: 10px;
+}
+
+QTableWidget {
+    background-color: white;
+    border-radius: 0px;
+    border: 1px solid #E1EBE8;
+    gridline-color: transparent;
+}
+
+QHeaderView::section {
+    background-color: white;
+    padding: 12px;
+    border: none;
+    border-bottom: 2px solid #F0F5F3;
+    color: #7A8C85;
+    font-weight: bold;
+}
+
+QTableWidget::item {
+    padding: 10px;
+    border-bottom: 1px solid #F0F5F3;
+}
+
+QPlainTextEdit {
+    background-color:#dff2ec;
+    border-radius: 20px;
+    padding: 15px;
+    border: none;
+    color: #7D723B;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+QPushButton {
+    background-color: transparent;
+    border: none;
+    color: #4A5551;
+    text-align: left;
+    padding: 12px 20px;
+    border-radius: 20px;
+    font-size: 14px;
+}
+
+QPushButton:hover {
+    background-color:#00A36C;
+    color: #FFFFFF;
+}
+
+QPushButton#btn_nuevo_paciente {
+    background-color: #00A36C;
+    color: white;
+    font-weight: bold;
+}
+</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QHBoxLayout" name="horizontalLayout">
+    <item>
+     <widget class="QFrame" name="frame_menu">
+      <property name="minimumSize">
+       <size>
+        <width>0</width>
+        <height>0</height>
+       </size>
+      </property>
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout_3">
+       <property name="spacing">
+        <number>30</number>
+       </property>
+       <property name="leftMargin">
+        <number>20</number>
+       </property>
+       <property name="topMargin">
+        <number>20</number>
+       </property>
+       <property name="rightMargin">
+        <number>20</number>
+       </property>
+       <property name="bottomMargin">
+        <number>20</number>
+       </property>
+       <item>
+        <widget class="QLabel" name="label_nutrisync">
+         <property name="styleSheet">
+          <string notr="true">QLabel#label_nutrisync {
+    color: #043927;             
+    font-family: &quot;Segoe UI&quot;, &quot;Inter&quot;, sans-serif; 
+    font-size: 25px;             
+    font-weight: 800;          
+    letter-spacing: -0.5px;    
+    padding-bottom: 10px;      
+    border-bottom: 2px solid #F0F5F3; 
+}</string>
+         </property>
+         <property name="text">
+          <string>NutriSync</string>
+         </property>
+         <property name="alignment">
+          <set>Qt::AlignCenter</set>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="btn_nuevoPaciente">
+         <property name="text">
+          <string>Nuevo Paciente</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="btn_dietaai">
+         <property name="text">
+          <string>Dieta con IA</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <widget class="QPushButton" name="btn_calculadora">
+         <property name="text">
+          <string>Calculadora IMC</string>
+         </property>
+        </widget>
+       </item>
+       <item>
+        <spacer name="verticalSpacer">
+         <property name="orientation">
+          <enum>Qt::Vertical</enum>
+         </property>
+         <property name="sizeHint" stdset="0">
+          <size>
+           <width>20</width>
+           <height>40</height>
+          </size>
+         </property>
+        </spacer>
+       </item>
+      </layout>
+     </widget>
+    </item>
+    <item>
+     <widget class="QFrame" name="frame_contenido">
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <layout class="QVBoxLayout" name="verticalLayout">
+       <item>
+        <widget class="QFrame" name="frame_busqueda">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>65</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>80</height>
+          </size>
+         </property>
+         <property name="frameShape">
+          <enum>QFrame::StyledPanel</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Raised</enum>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout_2">
+          <item>
+           <widget class="QLineEdit" name="barraBusqueda">
+            <property name="minimumSize">
+             <size>
+              <width>0</width>
+              <height>35</height>
+             </size>
+            </property>
+            <property name="placeholderText">
+             <string>Buscar paciente o expediente...</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QFrame" name="frame_cabecera">
+         <property name="frameShape">
+          <enum>QFrame::StyledPanel</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Raised</enum>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout_2">
+          <item>
+           <widget class="QFrame" name="frame_saludo">
+            <property name="frameShape">
+             <enum>QFrame::StyledPanel</enum>
+            </property>
+            <property name="frameShadow">
+             <enum>QFrame::Raised</enum>
+            </property>
+            <layout class="QVBoxLayout" name="verticalLayout_7">
+             <item>
+              <widget class="QLabel" name="lbl_saludo">
+               <property name="text">
+                <string>¡Hola Nutriólogo!</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="lbl_fecha">
+               <property name="text">
+                <string>10 de marzo de 2026</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QFrame" name="frame_info">
+         <property name="frameShape">
+          <enum>QFrame::StyledPanel</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Raised</enum>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout_3">
+          <property name="spacing">
+           <number>20</number>
+          </property>
+          <item>
+           <widget class="QFrame" name="frame_pacientes">
+            <property name="styleSheet">
+             <string notr="true">.QFrame {
+    background-color: #EBF3FA;
+    border: 1px solid #D5E5F2;
+    border-radius: 20px;
+}</string>
+            </property>
+            <property name="frameShape">
+             <enum>QFrame::StyledPanel</enum>
+            </property>
+            <property name="frameShadow">
+             <enum>QFrame::Raised</enum>
+            </property>
+            <layout class="QVBoxLayout" name="verticalLayout_4">
+             <item>
+              <widget class="QLabel" name="lbl_titulo">
+               <property name="text">
+                <string>Total de pacientes</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="lbl_informacion">
+               <property name="text">
+                <string>29</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item>
+           <widget class="QFrame" name="frame_citas">
+            <property name="styleSheet">
+             <string notr="true">.QFrame {
+    background-color: #FDF3E7;
+    border: 1px solid #F5E5D1;
+    border-radius: 20px;
+}</string>
+            </property>
+            <property name="frameShape">
+             <enum>QFrame::StyledPanel</enum>
+            </property>
+            <property name="frameShadow">
+             <enum>QFrame::Raised</enum>
+            </property>
+            <layout class="QVBoxLayout" name="verticalLayout_5">
+             <item>
+              <widget class="QLabel" name="lbl_titulo2">
+               <property name="text">
+                <string>Citas de hoy</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="lbl_informacion2">
+               <property name="text">
+                <string>6</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item>
+           <widget class="QFrame" name="frame_planesvencer">
+            <property name="styleSheet">
+             <string notr="true">.QFrame {
+    background-color: #FCE9E9;
+    border: 1px solid #F8D7D7;
+    border-radius: 20px;
+}</string>
+            </property>
+            <property name="frameShape">
+             <enum>QFrame::StyledPanel</enum>
+            </property>
+            <property name="frameShadow">
+             <enum>QFrame::Raised</enum>
+            </property>
+            <layout class="QVBoxLayout" name="verticalLayout_6">
+             <item>
+              <widget class="QLabel" name="lbl_titulo3">
+               <property name="text">
+                <string>Planes por vencer</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="lbl_informacion3">
+               <property name="text">
+                <string>9</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QFrame" name="frame_cuerpo">
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>16777215</height>
+          </size>
+         </property>
+         <property name="frameShape">
+          <enum>QFrame::StyledPanel</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Raised</enum>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout_4" stretch="7,3">
+          <item>
+           <widget class="QTableWidget" name="tableWidget">
+            <attribute name="horizontalHeaderStretchLastSection">
+             <bool>true</bool>
+            </attribute>
+            <column>
+             <property name="text">
+              <string>Hora</string>
+             </property>
+             <property name="textAlignment">
+              <set>AlignCenter</set>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>Paciente</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>Objetivo</string>
+             </property>
+            </column>
+            <column>
+             <property name="text">
+              <string>Estado</string>
+             </property>
+            </column>
+           </widget>
+          </item>
+          <item>
+           <widget class="QPlainTextEdit" name="plainTextEdit">
+            <property name="placeholderText">
+             <string>Recordatorios</string>
+            </property>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1000</width>
+     <height>26</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>
