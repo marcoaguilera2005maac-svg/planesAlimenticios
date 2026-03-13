@@ -1,0 +1,428 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>MainWindow3</class>
+ <widget class="QMainWindow" name="MainWindow3">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>1000</width>
+    <height>600</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>MainWindow</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">/* 1. FONDO Y TEXTOS BASE */
+QMainWindow {
+    background-color: #F8FAF9;
+}
+
+QLabel {
+    color: #4A5551;
+    font-family: &quot;Segoe UI&quot;, sans-serif;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+/* 2. TÍTULO PRINCIPAL (Plan Alimenticio) */
+/* Asegúrate de que el objectName del label superior sea lbl_titulo_plan */
+QLabel#lbl_titulo_plan {
+    font-size: 20px;
+    color: #043927;
+    margin: 15px;
+}
+
+/* 3. BUSCADOR Y LISTA IZQUIERDA */
+QLineEdit, QComboBox, QListWidget {
+    background-color: white;
+    border: 1px solid #E1EBE8;
+    border-radius: 10px;
+    padding: 8px;
+    color: #333333;
+}
+
+QListWidget::item {
+    padding: 8px;
+    border-bottom: 1px solid #F0F5F3;
+}
+
+QListWidget::item:selected {
+    background-color: #EBF3FA;
+    color: #043927;
+    border-radius: 5px;
+}
+
+/* 4. SECCIONES DE COMIDA (Desayuno, Comida, Cena) */
+/* Aplica esto a los QListWidgets de la derecha */
+QListWidget#list_desayuno, QListWidget#list_comida, QListWidget#list_cena {
+    border: 2px solid #E1EBE8;
+    background-color: #FFFFFF;
+	border-radius: 20px;
+}
+
+/* 5. BOTONES DE ACCIÓN (Agregar / Quitar) */
+QPushButton {
+    background-color: white;
+    border: 1px solid #D1DBD8;
+    border-radius: 8px;
+    padding: 6px;
+    font-weight: bold;
+    color: #4A5551;
+}
+
+QPushButton:hover {
+    background-color: #F0F5F3;
+}
+
+/* 6. BOTONES FINALES (Imprimir y Finalizar) */
+QPushButton#btn_imprimir {
+    background-color: #00A36C;
+    color: white;
+    border: none;
+    border-radius: 12px;
+    padding: 12px;
+    font-size: 14px;
+}
+
+QPushButton#btn_finalizar {
+    background-color: white;
+    color:#333333;
+    border: none;
+    border-radius: 12px;
+    padding: 12px;
+    font-size: 14px;
+}
+
+QPushButton#btn_imprimir:hover, QPushButton#btn_finalizar:hover {
+    padding: 12px;
+	border: 2px solid #E1EBE8;
+    background-color:#008155
+ 	
+}
+/* Frame Desayuno - Rosa */
+QFrame#frame_desayuno {
+    background-color: #FCE9E9;
+    border: 1px solid #F8D7D7;
+    border-radius: 15px;
+}
+
+/* Frame Comida - Crema */
+QFrame#frame_comida {
+    background-color: #FDF3E7;
+    border: 1px solid #F5E5D1;
+    border-radius: 15px;
+}
+
+/* Frame Cena - Azul */
+QFrame#frame_cena {
+    background-color: #EBF3FA;
+    border: 1px solid #D5E5F2;
+    border-radius: 15px;
+}</string>
+  </property>
+  <widget class="QWidget" name="centralwidget">
+   <layout class="QGridLayout" name="gridLayout">
+    <item row="0" column="0">
+     <widget class="QFrame" name="frame">
+      <property name="frameShape">
+       <enum>QFrame::StyledPanel</enum>
+      </property>
+      <property name="frameShadow">
+       <enum>QFrame::Raised</enum>
+      </property>
+      <layout class="QHBoxLayout" name="horizontalLayout" stretch="3,7">
+       <item>
+        <widget class="QFrame" name="frame_buscador">
+         <property name="frameShape">
+          <enum>QFrame::StyledPanel</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Raised</enum>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout">
+          <item>
+           <widget class="QLineEdit" name="lineEdit">
+            <property name="placeholderText">
+             <string>Buscar comida</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <widget class="QComboBox" name="comboBox">
+            <item>
+             <property name="text">
+              <string>Proteinas</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Grasas</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Carbohidratos</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Fibra</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item>
+           <widget class="QListWidget" name="lista_comida">
+            <item>
+             <property name="text">
+              <string>Pechuga de pollo</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Salmón</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Atún</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Bacalao</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Huevo</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Camarón</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Pavo</string>
+             </property>
+            </item>
+            <item>
+             <property name="text">
+              <string>Pulpo</string>
+             </property>
+            </item>
+           </widget>
+          </item>
+          <item>
+           <widget class="QFrame" name="frame_3">
+            <property name="frameShape">
+             <enum>QFrame::StyledPanel</enum>
+            </property>
+            <property name="frameShadow">
+             <enum>QFrame::Raised</enum>
+            </property>
+            <layout class="QHBoxLayout" name="horizontalLayout_4">
+             <item>
+              <spacer name="horizontalSpacer_4">
+               <property name="orientation">
+                <enum>Qt::Horizontal</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>40</width>
+                 <height>20</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+             <item>
+              <widget class="QPushButton" name="btn_agregar">
+               <property name="text">
+                <string>Agregar comida</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <spacer name="horizontalSpacer_5">
+               <property name="orientation">
+                <enum>Qt::Horizontal</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>40</width>
+                 <height>20</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+            </layout>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QFrame" name="frame_plan">
+         <property name="frameShape">
+          <enum>QFrame::StyledPanel</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Raised</enum>
+         </property>
+         <layout class="QVBoxLayout" name="verticalLayout_3">
+          <item>
+           <widget class="QFrame" name="frame_desayuno">
+            <property name="frameShape">
+             <enum>QFrame::StyledPanel</enum>
+            </property>
+            <property name="frameShadow">
+             <enum>QFrame::Raised</enum>
+            </property>
+            <layout class="QHBoxLayout" name="horizontalLayout_7">
+             <item>
+              <widget class="QLabel" name="label_desayuno">
+               <property name="text">
+                <string>Desayuno</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QListView" name="list_desayuno"/>
+             </item>
+             <item>
+              <widget class="QPushButton" name="btn_quitar">
+               <property name="text">
+                <string>Quitar seleccionado</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item>
+           <widget class="QFrame" name="frame_comida">
+            <property name="frameShape">
+             <enum>QFrame::StyledPanel</enum>
+            </property>
+            <property name="frameShadow">
+             <enum>QFrame::Raised</enum>
+            </property>
+            <layout class="QHBoxLayout" name="horizontalLayout_6">
+             <item>
+              <widget class="QLabel" name="label_comida">
+               <property name="text">
+                <string> Comida   </string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QListView" name="list_comida"/>
+             </item>
+             <item>
+              <widget class="QPushButton" name="btn_quitar2">
+               <property name="text">
+                <string>Quitar seleccionado</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item>
+           <widget class="QFrame" name="frame_cena">
+            <property name="frameShape">
+             <enum>QFrame::StyledPanel</enum>
+            </property>
+            <property name="frameShadow">
+             <enum>QFrame::Raised</enum>
+            </property>
+            <layout class="QHBoxLayout" name="horizontalLayout_5">
+             <item>
+              <widget class="QLabel" name="label_cena">
+               <property name="text">
+                <string>Cena         </string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QListView" name="list_cena"/>
+             </item>
+             <item>
+              <widget class="QPushButton" name="btn_quitar3">
+               <property name="text">
+                <string>Quitar seleccionado</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+          <item>
+           <widget class="QFrame" name="frame_7">
+            <property name="frameShape">
+             <enum>QFrame::StyledPanel</enum>
+            </property>
+            <property name="frameShadow">
+             <enum>QFrame::Raised</enum>
+            </property>
+            <layout class="QHBoxLayout" name="horizontalLayout_2">
+             <item>
+              <widget class="QPushButton" name="btn_imprimir">
+               <property name="text">
+                <string>Imprimir plan alimenticio</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <spacer name="horizontalSpacer_3">
+               <property name="orientation">
+                <enum>Qt::Horizontal</enum>
+               </property>
+               <property name="sizeType">
+                <enum>QSizePolicy::Fixed</enum>
+               </property>
+               <property name="sizeHint" stdset="0">
+                <size>
+                 <width>80</width>
+                 <height>20</height>
+                </size>
+               </property>
+              </spacer>
+             </item>
+             <item>
+              <widget class="QPushButton" name="btn_finalizar">
+               <property name="text">
+                <string>Finalizar</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+      </layout>
+     </widget>
+    </item>
+   </layout>
+  </widget>
+  <widget class="QMenuBar" name="menubar">
+   <property name="geometry">
+    <rect>
+     <x>0</x>
+     <y>0</y>
+     <width>1000</width>
+     <height>26</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QStatusBar" name="statusbar"/>
+ </widget>
+ <resources/>
+ <connections/>
+</ui>

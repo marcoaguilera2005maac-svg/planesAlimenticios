@@ -1,17 +1,106 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <ui version="4.0">
- <class>MainWindow</class>
- <widget class="QMainWindow" name="MainWindow">
+ <class>MainWindow2</class>
+ <widget class="QMainWindow" name="MainWindow2">
   <property name="geometry">
    <rect>
     <x>0</x>
     <y>0</y>
     <width>1000</width>
-    <height>600</height>
+    <height>640</height>
    </rect>
   </property>
   <property name="windowTitle">
    <string>MainWindow</string>
+  </property>
+  <property name="styleSheet">
+   <string notr="true">
+QMainWindow#MainWindow2 {
+    background-color: #F8FAF9;
+}
+
+QLabel {
+    color: #4A5551;
+    font-family: &quot;Segoe UI&quot;, &quot;Inter&quot;, sans-serif;
+    font-size: 13px;
+    border: none;
+    background: transparent;
+}
+
+QLabel#label_nombre {
+    font-size: 20px;
+    font-weight: 800;
+    color: #043927;
+}
+
+QFrame#frame_datos, QFrame#frame_medidas {
+    background-color: #dff2ec ;
+    border: 1px solid #E1EBE8;
+    border-radius: 20px;
+}
+
+QLabel#lbl_seccion {
+    font-size: 14px;
+    font-weight: bold;
+    color: #00A36C;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+QLineEdit, QDoubleSpinBox, QSpinBox, QComboBox {
+    background-color: #FAFAFA;
+    border: 1px solid #D1DBD8;
+    border-radius: 10px;
+    padding: 8px 12px;
+    color: #333333;
+    selection-background-color: #00A36C;
+}
+
+QLineEdit:focus, QDoubleSpinBox:focus, QComboBox:focus {
+    border: 2px solid #00A36C;
+    background-color: #FFFFFF;
+}
+
+QPushButton {
+    background-color: white;
+    border: 1px solid #D1DBD8;
+    border-radius: 10px;
+    padding: 8px 20px;
+    font-weight: bold;
+    color: #4A5551;
+}
+
+QPushButton:hover {
+    background-color: #F0F5F3;
+    border: 1px solid #00A36C;
+}
+
+
+QPushButton#btn_dieta {
+    background-color: #00A36C;
+    color: white;
+    font-size: 15px;
+    font-weight: bold;
+    border: none;
+    border-radius: 15px;
+    padding: 40px;
+}
+
+QPushButton#btn_generar_dieta:hover {
+    background-color: #008F5E;
+}
+
+
+QFrame#frame_imc { background-color: #FCE9E9; border: 1px solid #F8D7D7; border-radius: 20px; }
+QFrame#frame_tmb { background-color: #FDF3E7; border: 1px solid #F5E5D1; border-radius: 20px; }
+QFrame#frame_meta { background-color: #EBF3FA; border: 1px solid #D5E5F2; border-radius: 20px; }
+
+
+QLabel#label_res, QLabel#label_res2, QLabel#label_res3, QLabel#lbl_dts, QLabel#lbl_medidas {
+    font-size: 18px;
+    font-weight: 800;
+    color: #2D3436;
+}</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QVBoxLayout" name="verticalLayout">
@@ -29,7 +118,7 @@
          <property name="maximumSize">
           <size>
            <width>16777215</width>
-           <height>60</height>
+           <height>70</height>
           </size>
          </property>
          <property name="frameShape">
@@ -47,7 +136,7 @@
            </widget>
           </item>
           <item>
-           <widget class="QLabel" name="label">
+           <widget class="QLabel" name="label_nombre">
             <property name="text">
              <string>Ficha médica: Marco Aguilera</string>
             </property>
@@ -81,7 +170,7 @@
          <property name="maximumSize">
           <size>
            <width>16777215</width>
-           <height>200</height>
+           <height>16777215</height>
           </size>
          </property>
          <property name="frameShape">
@@ -90,29 +179,53 @@
          <property name="frameShadow">
           <enum>QFrame::Raised</enum>
          </property>
-         <layout class="QFormLayout" name="formLayout">
-          <item row="0" column="0" colspan="2">
-           <widget class="QLabel" name="label_2">
-            <property name="text">
-             <string>Datos Personales</string>
-            </property>
-           </widget>
-          </item>
-          <item row="1" column="0">
-           <widget class="QLineEdit" name="nombreCompleto">
-            <property name="placeholderText">
-             <string>Nombre completo</string>
-            </property>
-           </widget>
-          </item>
+         <layout class="QGridLayout" name="gridLayout_3">
           <item row="2" column="0">
+           <widget class="QLabel" name="label_17">
+            <property name="text">
+             <string>Nombre completo:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="0">
+           <widget class="QLabel" name="label_18">
+            <property name="text">
+             <string>Edad:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="1">
+           <widget class="QLineEdit" name="nombreCompleto">
+            <property name="text">
+             <string/>
+            </property>
+            <property name="placeholderText">
+             <string>Ej: Marco Antonio Aguilera Cruz</string>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="1">
            <widget class="QLineEdit" name="lineEdit_edad">
             <property name="placeholderText">
-             <string>Edad</string>
+             <string>Ej: 20 años</string>
             </property>
            </widget>
           </item>
-          <item row="4" column="0">
+          <item row="2" column="3">
+           <widget class="QLineEdit" name="lineEdit_enfermedades">
+            <property name="placeholderText">
+             <string>Ej: Diabetes</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="2">
+           <widget class="QLabel" name="label_3">
+            <property name="text">
+             <string>Enfermedades:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="3">
            <widget class="QComboBox" name="comboBox">
             <item>
              <property name="text">
@@ -126,17 +239,17 @@
             </item>
            </widget>
           </item>
-          <item row="5" column="0">
-           <widget class="QLineEdit" name="lineEdit_enfermedades">
-            <property name="placeholderText">
-             <string>Enfermedades</string>
+          <item row="3" column="2">
+           <widget class="QLabel" name="label_19">
+            <property name="text">
+             <string>Género:</string>
             </property>
            </widget>
           </item>
-          <item row="3" column="0">
-           <widget class="QLabel" name="label_3">
+          <item row="0" column="0">
+           <widget class="QLabel" name="lbl_dts">
             <property name="text">
-             <string>Género</string>
+             <string>Datos Personales</string>
             </property>
            </widget>
           </item>
@@ -144,7 +257,7 @@
         </widget>
        </item>
        <item>
-        <widget class="QFrame" name="frame_3">
+        <widget class="QFrame" name="frame_medidas">
          <property name="frameShape">
           <enum>QFrame::StyledPanel</enum>
          </property>
@@ -152,72 +265,255 @@
           <enum>QFrame::Raised</enum>
          </property>
          <layout class="QGridLayout" name="gridLayout">
+          <item row="1" column="1">
+           <widget class="QLineEdit" name="lineEdit">
+            <property name="placeholderText">
+             <string>Ej: 80 kg</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="0">
+           <widget class="QLabel" name="label_6">
+            <property name="text">
+             <string>% Grasa:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="1" column="0">
+           <widget class="QLabel" name="label_5">
+            <property name="text">
+             <string>Peso:</string>
+            </property>
+           </widget>
+          </item>
+          <item row="2" column="1">
+           <widget class="QLineEdit" name="lineEdit_2">
+            <property name="placeholderText">
+             <string>Ej: 18%</string>
+            </property>
+           </widget>
+          </item>
           <item row="0" column="0">
-           <widget class="QLabel" name="label_4">
+           <widget class="QLabel" name="lbl_medidas">
             <property name="text">
              <string>Medidas</string>
             </property>
            </widget>
           </item>
-          <item row="1" column="4">
-           <widget class="QLabel" name="label_8">
-            <property name="text">
-             <string>Estatura</string>
+          <item row="1" column="3">
+           <widget class="QLineEdit" name="lineEdit_4">
+            <property name="placeholderText">
+             <string>Ej: 180 cm</string>
             </property>
            </widget>
           </item>
-          <item row="2" column="4">
-           <widget class="QLabel" name="label_9">
-            <property name="text">
-             <string>% Músculo</string>
+          <item row="3" column="3">
+           <widget class="QLineEdit" name="lineEdit_6">
+            <property name="placeholderText">
+             <string>Ej: 102 cm</string>
             </property>
            </widget>
           </item>
-          <item row="3" column="4">
-           <widget class="QLabel" name="label_10">
+          <item row="2" column="3">
+           <widget class="QLineEdit" name="lineEdit_5">
+            <property name="placeholderText">
+             <string>Ej: 33%</string>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="1">
+           <widget class="QLineEdit" name="lineEdit_3">
+            <property name="placeholderText">
+             <string>Ej: 83 cm</string>
+            </property>
+           </widget>
+          </item>
+          <item row="3" column="0">
+           <widget class="QLabel" name="label_7">
             <property name="text">
-             <string>Cadera</string>
+             <string>Cintura:</string>
             </property>
            </widget>
           </item>
           <item row="1" column="2">
-           <widget class="QLabel" name="label_5">
+           <widget class="QLabel" name="label_8">
             <property name="text">
-             <string>Peso</string>
+             <string>Estatura:</string>
             </property>
            </widget>
           </item>
           <item row="2" column="2">
-           <widget class="QLabel" name="label_6">
+           <widget class="QLabel" name="label_9">
             <property name="text">
-             <string>% Grasa</string>
+             <string>% Músculo:</string>
             </property>
            </widget>
           </item>
           <item row="3" column="2">
-           <widget class="QLabel" name="label_7">
+           <widget class="QLabel" name="label_10">
             <property name="text">
-             <string>Cintura</string>
+             <string>Cadera:</string>
             </property>
            </widget>
           </item>
-          <item row="1" column="1">
-           <widget class="QLineEdit" name="lineEdit"/>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QFrame" name="frame_resultados">
+         <property name="frameShape">
+          <enum>QFrame::StyledPanel</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Raised</enum>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout_2">
+          <item>
+           <widget class="QFrame" name="frame_imc">
+            <property name="frameShape">
+             <enum>QFrame::StyledPanel</enum>
+            </property>
+            <property name="frameShadow">
+             <enum>QFrame::Raised</enum>
+            </property>
+            <layout class="QVBoxLayout" name="verticalLayout_3">
+             <item>
+              <widget class="QLabel" name="label_11">
+               <property name="text">
+                <string>IMC</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="label_res">
+               <property name="text">
+                <string>TextLabel</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
           </item>
-          <item row="2" column="1">
-           <widget class="QLineEdit" name="lineEdit_2"/>
+          <item>
+           <widget class="QFrame" name="frame_tmb">
+            <property name="frameShape">
+             <enum>QFrame::StyledPanel</enum>
+            </property>
+            <property name="frameShadow">
+             <enum>QFrame::Raised</enum>
+            </property>
+            <layout class="QVBoxLayout" name="verticalLayout_4">
+             <item>
+              <widget class="QLabel" name="label_13">
+               <property name="text">
+                <string>TextLabel</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="label_res2">
+               <property name="text">
+                <string>TextLabel</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
           </item>
-          <item row="3" column="1">
-           <widget class="QLineEdit" name="lineEdit_3"/>
+          <item>
+           <widget class="QFrame" name="frame_meta">
+            <property name="frameShape">
+             <enum>QFrame::StyledPanel</enum>
+            </property>
+            <property name="frameShadow">
+             <enum>QFrame::Raised</enum>
+            </property>
+            <layout class="QVBoxLayout" name="verticalLayout_5">
+             <item>
+              <widget class="QLabel" name="label_15">
+               <property name="text">
+                <string>TextLabel</string>
+               </property>
+              </widget>
+             </item>
+             <item>
+              <widget class="QLabel" name="label_res3">
+               <property name="text">
+                <string>TextLabel</string>
+               </property>
+              </widget>
+             </item>
+            </layout>
+           </widget>
           </item>
-          <item row="1" column="3">
-           <widget class="QLineEdit" name="lineEdit_4"/>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QFrame" name="frame_btndieta">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>0</height>
+          </size>
+         </property>
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>60</height>
+          </size>
+         </property>
+         <property name="frameShape">
+          <enum>QFrame::StyledPanel</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Raised</enum>
+         </property>
+         <layout class="QGridLayout" name="gridLayout_2">
+          <item row="0" column="1">
+           <widget class="QPushButton" name="btn_dieta">
+            <property name="minimumSize">
+             <size>
+              <width>200</width>
+              <height>0</height>
+             </size>
+            </property>
+            <property name="maximumSize">
+             <size>
+              <width>16777215</width>
+              <height>16777215</height>
+             </size>
+            </property>
+            <property name="text">
+             <string>Generar Dieta</string>
+            </property>
+           </widget>
           </item>
-          <item row="2" column="3">
-           <widget class="QLineEdit" name="lineEdit_5"/>
+          <item row="0" column="2">
+           <spacer name="horizontalSpacer_3">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
           </item>
-          <item row="3" column="3">
-           <widget class="QLineEdit" name="lineEdit_6"/>
+          <item row="0" column="0">
+           <spacer name="horizontalSpacer_2">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
           </item>
          </layout>
         </widget>
