@@ -1,40 +1,42 @@
 import sys
-from PyQt6 import QWidgets, uic
+from PyQt6 import QtWidgets,uic
 from PyQt6.QtCore import pyqtSignal
-from controllers.login_controller import LoginController
-class login(QtWidgets.QMainWindow):
+from controller.login_controller import LoginController
+
+class Login(QtWidgets.QDialog):
     login_successfull = pyqtSignal()
-    def init (self):
-        super(). init()
-        uic.loadUI("./Views/login.ui" , self)
+    def __init__ (self):
+        super().__init__()
+        uic.loadUi("./views/login.ui", self)
         self.controller = LoginController(self, None)
-class Dashboard(QtWidgets.QMainWindo) :
+
+class Dashboard(QtWidgets.QMainWindow) :
     request_ficha = pyqtSignal()
-    def init (self):
-        super().innit ()
-        uic.loadUI("./views/dashboard.ui" , self)
-        #Boton para ir a la ficha(objectname:btn_nuevo)
+    def __init__ (self):
+        super().__init__()
+        uic.loadUi("./views/dashboard.ui", self)
         self.btn_nuevo.clicked.connect(lambda: self.request_ficha.emit())
-class Ficha(Qtwidgets.QMainWindow):
+
+class Ficha(QtWidgets.QMainWindow):
     request_plan = pyqtSignal()
-    def innit (self):
-        super().innit()
-        uic.loadUI("./views/ficha.ui",self)
-        #boton para el plan (objectName:btn_generar)
+    def __init__ (self):
+        super().__init__()
+        uic.loadUi("./views/ficha.ui", self)
         self.btn_generar.clicked.connect(lambda : self.request_plan.emit())
-class plan(Qtwidgets.QMainWindow):
+
+class Plan(QtWidgets.QMainWindow):
     finalizado = pyqtSignal()
-    def innit (self):
-        super(). innit ()
-        uic.loadUi("./views/receta.ui",self)
+    def __init__ (self):
+        super().__init__()
+        uic.loadUi("./views/receta.ui", self)
         self.btn_finalizar.clicked.connect(lambda: self.finalizado.emit())
-#administrador de la app
+
 class AppManager:
-    def innit (self):
-        self.w_login= Login()
+    def __init__ (self):
+        self.w_login = Login()
         self.w_dash = Dashboard()
         self.w_ficha = Ficha()
-        self.w_plan = Plan ()
+        self.w_plan = Plan()
         self.w_login.login_successfull.connect(self.ir_a_dash)
         self.w_dash.request_ficha.connect(self.ir_a_ficha)
         self.w_ficha.request_plan.connect(self.ir_a_plan)
@@ -48,7 +50,7 @@ class AppManager:
         self.w_plan.close()
 
     def ir_a_ficha(self):
-        self.w_dash.show()
+        self.w_ficha.show()
         self.w_login.close()
         self.w_plan.close()
 
@@ -56,7 +58,7 @@ class AppManager:
         self.w_plan.show()
         self.w_ficha.close()
 
-if name == "main":
-    app = Qtwidgets.QApplication(sys.argv)
+if __name__ == "__main__":
+    app = QtWidgets.QApplication(sys.argv)
     manager = AppManager()
     sys.exit(app.exec())

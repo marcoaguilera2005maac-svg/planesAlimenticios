@@ -120,7 +120,7 @@ QPushButton#btn_entrar:pressed {
        </widget>
       </item>
       <item>
-       <widget class="QLineEdit" name="txt_username">
+       <widget class="QLineEdit" name="text_username">
         <property name="placeholderText">
          <string>Username</string>
         </property>
@@ -128,13 +128,16 @@ QPushButton#btn_entrar:pressed {
       </item>
       <item>
        <widget class="QLineEdit" name="txt_password">
+        <property name="echoMode">
+         <enum>QLineEdit::Password</enum>
+        </property>
         <property name="placeholderText">
          <string>Password</string>
         </property>
        </widget>
       </item>
       <item>
-       <widget class="QPushButton" name="btn_entrar">
+       <widget class="QPushButton" name="btn_login">
         <property name="minimumSize">
          <size>
           <width>0</width>
