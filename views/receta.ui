@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1000</width>
-    <height>600</height>
+    <height>594</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -120,6 +120,10 @@ QFrame#frame_cena {
     background-color: #EBF3FA;
     border: 1px solid #D5E5F2;
     border-radius: 15px;
+}
+QFrame#frame_buscador{
+    background-color:#dff2ec;
+	border-radius: 20px;
 }</string>
   </property>
   <widget class="QWidget" name="centralwidget">
