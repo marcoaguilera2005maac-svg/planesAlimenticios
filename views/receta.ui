@@ -14,8 +14,7 @@
    <string>MainWindow</string>
   </property>
   <property name="styleSheet">
-   <string notr="true">/* 1. FONDO Y TEXTOS BASE */
-QMainWindow {
+   <string notr="true">QMainWindow {
     background-color: #F8FAF9;
 }
 
@@ -26,15 +25,12 @@ QLabel {
     font-weight: bold;
 }
 
-/* 2. TÍTULO PRINCIPAL (Plan Alimenticio) */
-/* Asegúrate de que el objectName del label superior sea lbl_titulo_plan */
 QLabel#lbl_titulo_plan {
     font-size: 20px;
     color: #043927;
     margin: 15px;
 }
 
-/* 3. BUSCADOR Y LISTA IZQUIERDA */
 QLineEdit, QComboBox, QListWidget {
     background-color: white;
     border: 1px solid #E1EBE8;
@@ -54,15 +50,6 @@ QListWidget::item:selected {
     border-radius: 5px;
 }
 
-/* 4. SECCIONES DE COMIDA (Desayuno, Comida, Cena) */
-/* Aplica esto a los QListWidgets de la derecha */
-QListWidget#list_desayuno, QListWidget#list_comida, QListWidget#list_cena {
-    border: 2px solid #E1EBE8;
-    background-color: #FFFFFF;
-	border-radius: 20px;
-}
-
-/* 5. BOTONES DE ACCIÓN (Agregar / Quitar) */
 QPushButton {
     background-color: white;
     border: 1px solid #D1DBD8;
@@ -76,7 +63,6 @@ QPushButton:hover {
     background-color: #F0F5F3;
 }
 
-/* 6. BOTONES FINALES (Imprimir y Finalizar) */
 QPushButton#btn_imprimir {
     background-color: #00A36C;
     color: white;
@@ -101,21 +87,19 @@ QPushButton#btn_imprimir:hover, QPushButton#btn_finalizar:hover {
     background-color:#008155
  	
 }
-/* Frame Desayuno - Rosa */
+
 QFrame#frame_desayuno {
     background-color: #FCE9E9;
     border: 1px solid #F8D7D7;
     border-radius: 15px;
 }
 
-/* Frame Comida - Crema */
 QFrame#frame_comida {
     background-color: #FDF3E7;
     border: 1px solid #F5E5D1;
     border-radius: 15px;
 }
 
-/* Frame Cena - Azul */
 QFrame#frame_cena {
     background-color: #EBF3FA;
     border: 1px solid #D5E5F2;
@@ -124,12 +108,16 @@ QFrame#frame_cena {
 QFrame#frame_buscador{
     background-color:#dff2ec;
 	border-radius: 20px;
+}
+QFrame#frame_plan{
+    background-color:;
+	border-radius: 20px;
 }</string>
   </property>
   <widget class="QWidget" name="centralwidget">
    <layout class="QGridLayout" name="gridLayout">
     <item row="0" column="0">
-     <widget class="QFrame" name="frame">
+     <widget class="QFrame" name="frame_info">
       <property name="frameShape">
        <enum>QFrame::StyledPanel</enum>
       </property>
@@ -295,7 +283,7 @@ QFrame#frame_buscador{
               </widget>
              </item>
              <item>
-              <widget class="QListView" name="list_desayuno"/>
+              <widget class="QTableWidget" name="tableWidget"/>
              </item>
              <item>
               <widget class="QPushButton" name="btn_quitar">
@@ -324,7 +312,7 @@ QFrame#frame_buscador{
               </widget>
              </item>
              <item>
-              <widget class="QListView" name="list_comida"/>
+              <widget class="QTableWidget" name="tableWidget_3"/>
              </item>
              <item>
               <widget class="QPushButton" name="btn_quitar2">
@@ -353,7 +341,7 @@ QFrame#frame_buscador{
               </widget>
              </item>
              <item>
-              <widget class="QListView" name="list_cena"/>
+              <widget class="QTableWidget" name="tableWidget_2"/>
              </item>
              <item>
               <widget class="QPushButton" name="btn_quitar3">

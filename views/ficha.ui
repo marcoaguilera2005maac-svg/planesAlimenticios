@@ -471,7 +471,7 @@ QLabel#label_res, QLabel#label_res2, QLabel#label_res3, QLabel#lbl_dts, QLabel#l
          </property>
          <layout class="QGridLayout" name="gridLayout_2">
           <item row="0" column="1">
-           <widget class="QPushButton" name="btn_dieta">
+           <widget class="QPushButton" name="btn_generar">
             <property name="minimumSize">
              <size>
               <width>200</width>

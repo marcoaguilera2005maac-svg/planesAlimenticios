@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>1000</width>
-    <height>624</height>
+    <height>650</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -118,6 +118,18 @@ QPushButton#btn_nuevo_paciente {
     background-color: #00A36C;
     color: white;
     font-weight: bold;
+}
+QPushButton#btn_abrir_ficha {
+    background-color: #00A36C;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    border-radius: 15px;
+    padding: 8px 15px;
+    border: none;
+}
+QPushButton#btn_abrir_ficha:hover {
+    background-color: #008f5d;
 }
 </string>
   </property>
@@ -259,6 +271,12 @@ QPushButton#btn_nuevo_paciente {
        </item>
        <item>
         <widget class="QFrame" name="frame_cabecera">
+         <property name="maximumSize">
+          <size>
+           <width>16777215</width>
+           <height>16777215</height>
+          </size>
+         </property>
          <property name="frameShape">
           <enum>QFrame::StyledPanel</enum>
          </property>
@@ -460,6 +478,57 @@ QPushButton#btn_nuevo_paciente {
              <string>Recordatorios</string>
             </property>
            </widget>
+          </item>
+         </layout>
+        </widget>
+       </item>
+       <item>
+        <widget class="QFrame" name="frame">
+         <property name="minimumSize">
+          <size>
+           <width>0</width>
+           <height>60</height>
+          </size>
+         </property>
+         <property name="frameShape">
+          <enum>QFrame::StyledPanel</enum>
+         </property>
+         <property name="frameShadow">
+          <enum>QFrame::Raised</enum>
+         </property>
+         <layout class="QHBoxLayout" name="horizontalLayout_5">
+          <item>
+           <spacer name="horizontalSpacer">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
+          </item>
+          <item>
+           <widget class="QPushButton" name="btn_nuevo">
+            <property name="text">
+             <string>Abrir ficha del paciente</string>
+            </property>
+           </widget>
+          </item>
+          <item>
+           <spacer name="horizontalSpacer_2">
+            <property name="orientation">
+             <enum>Qt::Horizontal</enum>
+            </property>
+            <property name="sizeHint" stdset="0">
+             <size>
+              <width>40</width>
+              <height>20</height>
+             </size>
+            </property>
+           </spacer>
           </item>
          </layout>
         </widget>
