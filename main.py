@@ -1,7 +1,6 @@
 import sys
 from PyQt6 import QtWidgets,uic
 from PyQt6.QtCore import pyqtSignal
-<<<<<<< Updated upstream
 from controller.login_controller import LoginController
 
 class Login(QtWidgets.QDialog):
@@ -63,7 +62,3 @@ if __name__ == "__main__":
     app = QtWidgets.QApplication(sys.argv)
     manager = AppManager()
     sys.exit(app.exec())
-=======
-from controllers.login_controller import LoginController
-
->>>>>>> Stashed changes
