@@ -13,6 +13,11 @@
   <property name="windowTitle">
    <string>Dialog</string>
   </property>
+  <property name="styleSheet">
+   <string notr="true">QDialog#Dialog {
+    border-image: url(&quot;img/fondo.png&quot;);
+}</string>
+  </property>
   <layout class="QGridLayout" name="gridLayout">
    <item row="1" column="1">
     <widget class="QFrame" name="frame_login">
@@ -57,22 +62,20 @@ QLineEdit:focus {
     background-color: #FFFFFF;
 }
 
-QPushButton#btn_entrar {
-    background-color: #00A36C;
+QPushButton#btn_login {
+    background-color:#00A36C;
     color: white;
     border-radius: 15px;
     padding: 12px;
     font-weight: bold;
     font-size: 14px;
-    border: none;
-    outline: none;
 }
 
-QPushButton#btn_entrar:hover {
+QPushButton#btn_login:hover {
     background-color: #008155;
 }
 
-QPushButton#btn_entrar:pressed {
+QPushButton#btn_login:pressed {
     background-color: #006b46;
     padding-left: 14px;
 }</string>

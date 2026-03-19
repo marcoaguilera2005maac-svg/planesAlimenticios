@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1000</width>
-    <height>798</height>
+    <width>1022</width>
+    <height>723</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -387,7 +387,7 @@ QLabel#label_res, QLabel#label_res2, QLabel#label_res3, QLabel#lbl_dts, QLabel#l
              <item>
               <widget class="QLabel" name="label_res">
                <property name="text">
-                <string>TextLabel</string>
+                <string>22.7</string>
                </property>
               </widget>
              </item>
@@ -406,14 +406,14 @@ QLabel#label_res, QLabel#label_res2, QLabel#label_res3, QLabel#lbl_dts, QLabel#l
              <item>
               <widget class="QLabel" name="label_13">
                <property name="text">
-                <string>TextLabel</string>
+                <string>Tasa metabólica basal</string>
                </property>
               </widget>
              </item>
              <item>
               <widget class="QLabel" name="label_res2">
                <property name="text">
-                <string>TextLabel</string>
+                <string>2,350 kcal</string>
                </property>
               </widget>
              </item>
@@ -432,14 +432,14 @@ QLabel#label_res, QLabel#label_res2, QLabel#label_res3, QLabel#lbl_dts, QLabel#l
              <item>
               <widget class="QLabel" name="label_15">
                <property name="text">
-                <string>TextLabel</string>
+                <string>Consumo diario de agua</string>
                </property>
               </widget>
              </item>
              <item>
               <widget class="QLabel" name="label_res3">
                <property name="text">
-                <string>TextLabel</string>
+                <string>2.5 litros</string>
                </property>
               </widget>
              </item>
@@ -528,7 +528,7 @@ QLabel#label_res, QLabel#label_res2, QLabel#label_res3, QLabel#lbl_dts, QLabel#l
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1000</width>
+     <width>1022</width>
      <height>26</height>
     </rect>
    </property>
